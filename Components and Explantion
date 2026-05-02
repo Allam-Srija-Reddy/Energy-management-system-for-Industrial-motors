@@ -1,0 +1,33 @@
+Hardware
+
+ESP32 Microcontroller
+ACS712 Current Sensor
+MPU6050 Vibration Sensor
+Siemens S7-1200 PLC
+Variable Frequency Drive (VFD)
+
+Software & Protocols
+
+TinyML / TensorFlow Lite
+MQTT Protocol
+Node-RED
+Blynk Platform
+Arduino IDE / Python
+
+Explanation 
+AI-Powered Predictive Motor Energy Management System — Component Explanation
+Hardware
+
+ESP32 Microcontroller — Acts as the IoT data acquisition node; reads sensor values every 500ms and streams real-time motor data to the server over WiFi using MQTT protocol.
+ACS712 Current Sensor — Measures the precise current drawn by the motor (±30A range), helping the system track actual energy consumption at any given moment.
+MPU6050 Vibration Sensor — A 6-axis accelerometer that detects mechanical load and vibration patterns of the motor, helping identify abnormal behaviour or bearing wear early.
+Siemens S7-1200 PLC — Industrial-grade controller that receives AI prediction outputs and sends speed commands to the VFD, automating motor control without manual intervention.
+Variable Frequency Drive (VFD) — Adjusts the motor's RPM by varying the supply frequency based on PLC commands, directly reducing energy consumption during low-demand periods.
+
+Software & Protocols
+
+TinyML / TensorFlow Lite — A lightweight AI model running on-device that predicts upcoming motor load levels (Low / Medium / High) 5–10 minutes in advance.
+MQTT Protocol — A lightweight publish-subscribe messaging protocol used for fast, reliable communication between the ESP32 and the central server.
+Node-RED — A visual flow-based dashboard that displays live energy data, automates logic, and triggers alerts on anomaly detection.
+Blynk Platform — A mobile app interface that shows real-time kWh consumed, cost savings, CO₂ reduction, and sends instant alerts to the factory manager.
+Arduino IDE / Python — Used for writing ESP32 firmware and building the ML data pipeline for training and deploying the TinyML model.
